@@ -16,19 +16,46 @@ export default {
     data() {
         return {
             query: '',
-            API_URL: "https://api.themoviedb.org/3/search/movie?api_key=702310bcccbb65c268d940c10a9c9146&language=it-IT&page=1&include_adult=false&query=",
+            API_FILM: "https://api.themoviedb.org/3/search/movie?api_key=702310bcccbb65c268d940c10a9c9146&language=it-IT&page=1&include_adult=false&query=",
+            API_SERIE: "https://api.themoviedb.org/3/search/tv?api_key=702310bcccbb65c268d940c10a9c9146&language=en-US&page=1&include_adult=false&query=",
         }
     },
     methods: {
         sendRequest() {
-            axios.get(`${this.API_URL}${this.query.toLowerCase()}`).then(response => {
+            /* axios.get(`${this.API_FILM}${this.query.toLowerCase()}`).then(response => {
             state.querySearch = response.data.results
             console.log(state.querySearch)
             })
             .catch(error => {
             console.log(error)
+            });
+
+            axios.get(`${this.API_SERIE}${this.query.toLowerCase()}`).then(response => {
+            state.querySearch = [...state.querySearch, ...response.data.results]
+            console.log(state.querySearch)
             })
-            
+            .catch(error => {
+            console.log(error)
+            }); */
+
+            let films = `${this.API_FILM}${this.query.toLowerCase()}`
+            let series = `${this.API_SERIE}${this.query.toLowerCase()}`
+
+            const requestFilm = axios.get(films)
+            const requestSerie = axios.get(series)
+
+            axios
+            .all([requestFilm, requestSerie])
+            .then(responses => {
+            const responseOne = responses[0].data.results
+            const responseTwo = responses[1].data.results
+
+            state.querySearch = [...responseOne, ...responseTwo]
+            })
+            .catch(error => {
+            console.log(error)
+            })
+
         }
     }
 }
