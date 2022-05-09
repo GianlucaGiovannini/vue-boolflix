@@ -1,6 +1,9 @@
 import Vue from 'vue'
 import App from './App.vue'
 
+import FlagIcon from 'vue-flag-icon'
+Vue.use(FlagIcon);
+
 /* bootstrap */
 const bootstrap = require('bootstrap')
 Vue.use(bootstrap)

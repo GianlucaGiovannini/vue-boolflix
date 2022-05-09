@@ -17,18 +17,18 @@ export default {
         return {
             query: '',
             API_URL: "https://api.themoviedb.org/3/search/movie?api_key=702310bcccbb65c268d940c10a9c9146&language=it-IT&page=1&include_adult=false&query=",
-            querySearch: [],
         }
     },
     methods: {
         sendRequest() {
             axios.get(`${this.API_URL}${this.query.toLowerCase()}`).then(response => {
-            this.querySearch = response.data.results
-            state.querySearch = this.querySearch
+            state.querySearch = response.data.results
+            console.log(state.querySearch)
             })
             .catch(error => {
             console.log(error)
             })
+            
         }
     }
 }
