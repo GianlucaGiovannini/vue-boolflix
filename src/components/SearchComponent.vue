@@ -55,6 +55,7 @@ export default {
             .catch(error => {
             console.log(error)
             })
+            this.query = ''
 
         }
     }
@@ -64,7 +65,7 @@ export default {
 <style lang="scss" scoped>
 
     input {
-        width: 280px;
+        width: 100%;
         padding: 0.2rem 0.65rem ;
     }
     .search_icon {

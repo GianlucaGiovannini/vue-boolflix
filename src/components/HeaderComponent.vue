@@ -23,6 +23,12 @@ export default {
 
 <style lang="scss" scoped>
 header {
-    padding: 1rem 1.5rem;
+    width: 100%;
+    height: 90px;
+    background-color: #141414;
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 1;
 }
 </style>
