@@ -1,7 +1,7 @@
 import Vue from 'vue';
 
 const state = Vue.observable({
-    search: ''
+    querySearch: ''
 })
 
 export default state
