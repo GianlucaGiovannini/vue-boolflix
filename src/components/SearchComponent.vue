@@ -60,7 +60,7 @@ export default {
         }
     },
     mounted() {
-        this.query = "batman "
+        this.query = "batman"
         this.sendRequest()
 
     }
