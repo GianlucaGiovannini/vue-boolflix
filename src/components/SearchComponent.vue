@@ -58,6 +58,11 @@ export default {
             this.query = ''
 
         }
+    },
+    mounted() {
+        this.query = "batman "
+        this.sendRequest()
+
     }
 }
 </script>
