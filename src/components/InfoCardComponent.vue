@@ -102,13 +102,13 @@ export default {
         },
 
         clearDetails() {
-            console.log(this.detailsExtract)
+            /* console.log(this.detailsExtract) */
             this.detailsExtract.splice(0, this.detailsExtract)
         },
 
         requestDetails() {
             this.clearDetails()
-
+            
             if (this.list.name == null) {
                 axios.get(`https://api.themoviedb.org/3/movie/${this.idExtract}/credits?api_key=702310bcccbb65c268d940c10a9c9146`).then(response => {
                     const result = response.data.cast

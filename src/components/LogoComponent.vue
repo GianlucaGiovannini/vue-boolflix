@@ -13,14 +13,14 @@ export default {
     name: 'LogoComponent',
     data() {
         return {
-            query: 'one piece',
+            query: '',
             API_FILM: "https://api.themoviedb.org/3/search/movie?api_key=702310bcccbb65c268d940c10a9c9146&language=it-IT&page=1&include_adult=false&query=",
             API_SERIE: "https://api.themoviedb.org/3/search/tv?api_key=702310bcccbb65c268d940c10a9c9146&language=en-US&page=1&include_adult=false&query=",
         }
     },
     methods: {
         sendRequest() {
-           
+            this.query = "one piece"
             let films = `${this.API_FILM}${this.query.toLowerCase()}`
             let series = `${this.API_SERIE}${this.query.toLowerCase()}`
 
