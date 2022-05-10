@@ -1,7 +1,7 @@
 <template>
     <header>
         <div class="container-fluid">
-            <nav class="d-flex justify-content-between align-items-center">
+            <nav class="d-flex justify-content-between align-items-center px-3">
                 <LogoComponent />
                 <SearchComponent />
             </nav>
