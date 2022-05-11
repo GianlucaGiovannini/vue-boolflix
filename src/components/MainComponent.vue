@@ -2,9 +2,10 @@
     <main>
         <JumboComponent />
         <div class="container-fluid px-5">
-            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5 row-cols-xxl-6 py-5 px-4 px-md-5 g-4">
-                <CardContainer :list="list" v-for="list in filteredSearch" :key="list.id"/>    
-                
+            <div
+                class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5 row-cols-xxl-6 py-5 px-4 px-md-5 g-4">
+                <CardContainer :list="list" v-for="list in filteredSearch" :key="list.id" />
+
             </div>
         </div>
     </main>
@@ -32,9 +33,9 @@ export default {
         changeList() {
             this.listSeriesFilms = state.querySearch
         },
-        voteNumber(voto) {
+        /* voteNumber(voto) {
             return Math.round(Number(voto) / 2)
-        },
+        }, */
     },
     computed: {
         filteredSearch() {
@@ -46,7 +47,8 @@ export default {
             })
         },
     }
-    
+
 }
 </script>
+
 

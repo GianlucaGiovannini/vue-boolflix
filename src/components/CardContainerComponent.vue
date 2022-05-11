@@ -38,6 +38,10 @@ export default {
             height: 350px;
             width: 100%;
             object-fit: cover;
+            border-top-left-radius: 1.2rem;
+            border-top-right-radius: 1.2rem;
+            border-bottom-left-radius: 0.8rem;
+            border-bottom-right-radius: 0.8rem;
         }
 
         &:hover {
@@ -59,4 +63,5 @@ export default {
         position: relative;
     }
 }
+
 </style>

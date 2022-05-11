@@ -1,5 +1,5 @@
 <template>
-    <header>
+    <header :class="scrollHeader >= 90 ? 'scroll_y' : '' ">
         <div class="container-fluid">
             <nav class="d-flex justify-content-between align-items-center px-1 px-md-3">
                 <LogoComponent />
@@ -14,9 +14,27 @@ import LogoComponent from '@/components/LogoComponent.vue'
 import SearchComponent from '@/components/SearchComponent.vue'
 export default {
     name: 'HeaderComponent',
+    data() {
+        return {
+            scrollHeader: '',
+        }
+    },
     components: {
         LogoComponent,
         SearchComponent
+    },
+    methods: {
+        scrollHeaderY() {
+            /* this.scrollHeader = window.scrollY; */
+        }
+        
+    },
+    mounted(){
+        window.addEventListener("scroll", () => {
+            this.scrollHeader = window.scrollY
+            console.log(window.scrollY)
+            console.log(this.scrollHeader)
+        });
     }
 }
 </script>
@@ -30,13 +48,16 @@ header {
     top: 0;
     left: 0;
     z-index: 3;
-    transition: background-color 2s;
-    
+    transition: background-color 1.3s;
 
     &:hover {
-        background-color: rgb(20 20 20 / 93%);        
+        background-color: rgb(20 20 20 / 95%); 
     }
 }
+
+.scroll_y {
+        background-color: rgb(20 20 20 / 95%);        
+    }
 
 
 </style>

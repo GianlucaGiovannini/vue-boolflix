@@ -64,6 +64,7 @@ export default {
     img {
         object-fit: cover;
         object-position: top center;
+        box-shadow: 0px -20px 20px 19px #6f6483;
     }
 }
 </style>
