@@ -32,8 +32,8 @@ export default {
     mounted(){
         window.addEventListener("scroll", () => {
             this.scrollHeader = window.scrollY
-            console.log(window.scrollY)
-            console.log(this.scrollHeader)
+            /* console.log(window.scrollY)
+            console.log(this.scrollHeader) */
         });
     }
 }
