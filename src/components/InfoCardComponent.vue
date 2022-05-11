@@ -43,24 +43,7 @@
                     </span>
                 </div>
             </div>
-            <div class="stars d-flex gap-1">
-                <!-- <div class="list_vote me-2">Voto: {{ voteNumber(list.vote_average) }}</div> -->
-                <div :class="list.vote_average >= 2 ? 'active_star' : ''">
-                    <font-awesome-icon icon="fa-solid fa-star" />
-                </div>
-                <div :class="list.vote_average >= 4 ? 'active_star' : ''">
-                    <font-awesome-icon icon="fa-solid fa-star" />
-                </div>
-                <div :class="list.vote_average >= 6 ? 'active_star' : ''">
-                    <font-awesome-icon icon="fa-solid fa-star" />
-                </div>
-                <div :class="list.vote_average >= 8 ? 'active_star' : ''">
-                    <font-awesome-icon icon="fa-solid fa-star" />
-                </div>
-                <div :class="list.vote_average >= 9 ? 'active_star' : ''">
-                    <font-awesome-icon icon="fa-solid fa-star" />
-                </div>
-            </div>
+            <StarVote :vote="list.vote_average" />
         </div>
         <div v-else class="info_cast h-100 d-flex flex-column justify-content-between">
             <div class="cast" v-for="cast in detailsExtract" :key="cast.cast_id">
@@ -76,9 +59,13 @@
 
 <script>
 import axios from "axios"
+import StarVote from "@/components/StarVoteComponent.vue"
 
 export default {
     name: 'InfoCardComponent',
+    components: {
+        StarVote
+    },
     props: {
         list: Object,
     },
@@ -108,7 +95,7 @@ export default {
 
         requestDetails() {
             this.clearDetails()
-            
+
             if (this.list.name == null) {
                 axios.get(`https://api.themoviedb.org/3/movie/${this.idExtract}/credits?api_key=702310bcccbb65c268d940c10a9c9146`).then(response => {
                     const result = response.data.cast
@@ -150,7 +137,7 @@ export default {
     height: 65%;
     padding: 1rem 0.5rem;
     color: white;
-    background-color: rgba(0, 0, 0, 0.904);
+    background-color: rgba(0, 0, 0, 0.80);
     position: absolute;
     left: 0;
     bottom: -13%;
@@ -165,14 +152,6 @@ export default {
 
     .details_not_active {
         color: white;
-    }
-
-    .stars {
-        font-size: 0.9rem;
-
-        .active_star {
-            color: yellow;
-        }
     }
 
     .cast {

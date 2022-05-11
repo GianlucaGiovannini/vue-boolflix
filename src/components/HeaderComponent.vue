@@ -25,11 +25,17 @@ export default {
 header {
     width: 100%;
     height: 90px;
-    background-color: #141414;
-    position: sticky;
+    background-color: transparent;
+    position: fixed;
     top: 0;
     left: 0;
     z-index: 3;
+    transition: background-color 2s;
+    
+
+    &:hover {
+        background-color: rgb(20 20 20 / 93%);        
+    }
 }
 
 

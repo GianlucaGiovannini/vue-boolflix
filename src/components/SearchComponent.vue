@@ -1,6 +1,6 @@
 <template>
-    <div class="search_bar d-flex align-items-center">
-        <input v-model="query" type="text" placeholder="Cerca un film" @keyup.enter="sendRequest">
+    <div class="search_bar d-flex align-items-center justify-content-end">
+        <input v-model="query" type="text" placeholder="Search" @keyup.enter="sendRequest">
         <div class="search_icon">
             <font-awesome-icon icon="fa-solid fa-magnifying-glass" @click="sendRequest"/>
         </div>
@@ -70,8 +70,16 @@ export default {
 <style lang="scss" scoped>
 
     input {
-        width: 100%;
+        width: 40%;
         padding: 0.2rem 0.65rem ;
+        transition: width 1.5s;
+
+        &:focus {
+            width: 100%;
+        }
+        &:hover {
+            width: 100%;
+        }
     }
     .search_icon {
         color: white;
