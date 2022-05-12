@@ -24,9 +24,6 @@ export default {
         SearchComponent
     },
     methods: {
-        scrollHeaderY() {
-            /* this.scrollHeader = window.scrollY; */
-        }
         
     },
     mounted(){
@@ -50,6 +47,9 @@ header {
     z-index: 3;
     transition: background-color 1.3s;
 
+    nav {
+        height: 90px;
+    }
     &:hover {
         background-color: rgb(20 20 20 / 95%); 
     }

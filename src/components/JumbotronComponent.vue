@@ -1,6 +1,6 @@
 <template>
     <div class="jumbo_tron">
-        <img class="h-100 w-100 img-fluid" :src="jumboImg[active].src" :alt="jumboImg[active].alt">
+        <img class="h-100 w-100 img-fluid fade-in-out" :src="jumboImg[active].src" :alt="jumboImg[active].alt">
     </div>
 </template>
 
@@ -30,19 +30,25 @@ export default {
                     id: 4,
                     src: require("@/assets/img/jumbotron_4.jpg"),
                     alt: "My Hero Academia poster"
-                }
+                },
+                {
+                    id: 5,
+                    src: require("@/assets/img/jumbotron_5.jpg"),
+                    alt: "Prossime uscite poster"
+                },
+               
             ]
         }
     },
     methods: {
         timer() {
             setInterval(() => {
-                if (this.active === this.jumboImg.length -1) {
+                if (this.active === this.jumboImg.length - 1) {
                     this.active = 0
                 } else {
                     this.active++
                 }
-            }, 2500);
+            }, 4500);
         }
     },
     mounted() {
@@ -65,6 +71,16 @@ export default {
         object-fit: cover;
         object-position: top center;
         box-shadow: 0px -20px 20px 19px #6f6483;
+    }
+
+    .fade-in-out {
+        animation: fade 4.5s infinite;
+    }
+
+    @keyframes fade {
+        0% { opacity: 0; }
+        60% { opacity: 1; }
+        100% { opacity: 1;}
     }
 }
 </style>

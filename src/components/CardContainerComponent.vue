@@ -64,4 +64,14 @@ export default {
     }
 }
 
+@media screen and (min-width:500px) and (max-width:573px) {
+    .col {
+        &:hover {
+            padding-left: 3rem !important;
+            padding-right: 3rem !important;
+        }
+        
+    }
+}
+
 </style>

@@ -51,4 +51,22 @@ export default {
 }
 </script>
 
+<style lang="scss" scoped>
+.container-fluid {
+    width: 97%;
+}
+
+@media screen and (min-width: 1850px) {
+    .container-fluid {
+        width: 93%;
+    }
+}
+
+@media screen and (min-width: 2100px) {
+    .container-fluid {
+        width: 89%;
+    }
+}
+</style>
+
 

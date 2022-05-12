@@ -1,7 +1,7 @@
 <template>
     <div class="logo">
         <a href="#" @click="sendRequest">
-            <img src="@/assets/img/Netflix-logo.png" alt="Logo Netflix">
+            <img src="@/assets/img/giovaflix-logo.png" alt="Logo Netflix">
         </a>
     </div>
 </template>
