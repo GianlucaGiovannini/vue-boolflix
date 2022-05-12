@@ -36,7 +36,7 @@ export default {
                     src: require("@/assets/img/jumbotron_5.jpg"),
                     alt: "Prossime uscite poster"
                 },
-               
+
             ]
         }
     },
@@ -48,7 +48,7 @@ export default {
                 } else {
                     this.active++
                 }
-            }, 4500);
+            }, 5000);
         }
     },
     mounted() {
@@ -74,13 +74,30 @@ export default {
     }
 
     .fade-in-out {
-        animation: fade 4.5s infinite;
+        animation: fade 5s infinite;
     }
 
     @keyframes fade {
-        0% { opacity: 0; }
-        60% { opacity: 1; }
-        100% { opacity: 1;}
+        0% {
+            filter: blur(30px);
+            opacity: 0.7;
+        }
+
+        15% {
+            filter: blur(0px);
+            opacity: 1;
+        }
+
+        90% {
+            filter: blur(0px);
+            opacity: 1;
+        }
+
+        100% {
+            filter: blur(30px);
+            opacity: 0.7;
+        }
+
     }
 }
 </style>
